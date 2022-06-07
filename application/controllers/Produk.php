@@ -14,11 +14,11 @@ class Produk extends CI_Controller
     public function index()
     {
         $data["produk"] = $this->Model_Produk->getAll();
-        $this->load->view("partial/header");
-        $this->load->view("partial/headerscript");
+        $this->load->view("admin/partial/header");
+        $this->load->view("admin/partial/navbar_sidebar");
         $this->load->view("admin/produk", $data);
-        $this->load->view("partial/footer");
-        $this->load->view("partial/footerscript");
+        $this->load->view("admin/partial/footer");
+        $this->load->view("admin/partial/footer_script");
     }
 
     public function add()

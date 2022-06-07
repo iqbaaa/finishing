@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access alowed');
 
-class Produk_Produk extends CI_Model
+class Model_Produk extends CI_Model
 {
     private $_table = 'dataproduk';
 
