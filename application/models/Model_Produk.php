@@ -68,5 +68,18 @@ class Model_Produk extends CI_Model
 
         $this->db->insert($this->_table, $this);
     }
+
+    public function update()
+    {
+        $post = $this->input->post();
+        $this->namaProduk = $post['namaProduk'];
+        $this->Qty = $post['Qty'];
+        $this->Ukuran = $post['Ukuran'];
+        $this->warna = $post['warna'];
+        $this->nomerPemesanan = $post['nomerPemesanan'];
+        $this->idProduk = $post['idProduk'];
+
+        $this->db->update($this->_table, $this, )
+    }
 }
 ?>
