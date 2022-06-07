@@ -46,7 +46,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <span class="brand-text font-weight-light">Agensi</span>
+      <span class="brand-text font-weight-light">CV. Sarci Mediatama</span>
     </a>
 
     <!-- Sidebar -->
@@ -73,10 +73,10 @@
          </li>
           
           <li class="nav-item has-treeview">
-            <a href="<?=site_url('Transaksiu') ?>" class="nav-link">
-              <i class="nav-icon fas fa-dollar-sign"></i>
+            <a href="<?=site_url('Produk') ?>" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
               <p>
-                Data Transaksi
+                Data Produk
               </p>
             </a>
             
