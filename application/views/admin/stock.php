@@ -20,7 +20,8 @@
                 <div class="row">
                     <div class="col-12">
                         <?php $this->view('admin/partial/alertsukses') ?>
-                        <?php //$this->view('admin/partial/alerthapus') ?>
+                        <?php //$this->view('admin/partial/alerthapus') 
+                        ?>
                         <?= form_error(); ?>
                         <div class="card">
                             <div class="card-header card-primary">
@@ -36,30 +37,26 @@
                                             <th>Nama Produk</th>
                                             <th>Qty</th>
                                             <th>Ukuran</th>
-                                            <th>Warna</th>
-                                            <th>Nomer Pesanan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $no = 1;
-                                        foreach ($produk as $pro) {
+                                        foreach ($stock as $sto) {
                                         ?>
                                             <tr>
                                                 <td><?= $no++ ?></td>
-                                                <td><?= $pro->namaProduk ?></td>
-                                                <td><?= $pro->Qty ?></td>
-                                                <td><?= $pro->Ukuran ?></td>
-                                                <td><?= $pro->warna ?></td>
-                                                <td><?= $pro->nomerPemesanan ?></td>
+                                                <td><?= $sto->namaProduk ?></td>
+                                                <td><?= $sto->qty ?></td>
+                                                <td><?= $sto->ukuran ?></td>
                                                 <td>
-                                                    <a type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit<?php echo $pro->idProduk; ?>"><i class="fas fa-edit"></i></a>
-                                                    <a href="<?= site_url('Produk/delete/' . $pro->idProduk) ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                                    <a type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit<?php echo $sto->idStock; ?>"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?= site_url('Produk/delete/' . $sto->idStock) ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                             <!-- Modal ubah -->
-                                            <div class="modal fade" id="edit<?= $pro->idProduk ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal fade" id="edit<?= $sto->idStock ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -69,24 +66,16 @@
                                                             <form action="<?= site_url('Produk/edit') ?>" method="POST" role="form" enctype="multipart/form-data">
                                                                 <div class="form-group">
                                                                     <label for="">Nama Produk</label>
-                                                                    <input class="form-control" type="text" value="<?= $pro->namaProduk ?>" name="namaProduk" placeholder="Nama Produk" />
-                                                                    <input type="hidden" name="id" value="<?= $pro->idProduk ?>" id="">
+                                                                    <input class="form-control" type="text" value="<?= $sto->namaProduk ?>" name="namaProduk" placeholder="Nama Produk" />
+                                                                    <input type="hidden" name="id" value="<?= $sto->idStock ?>" id="">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="">Qty</label>
-                                                                    <input class="form-control" type="text" value="<?= $pro->Qty ?>" name="Qty" placeholder="Qty" />
+                                                                    <input class="form-control" type="text" value="<?= $sto->qty ?>" name="Qty" placeholder="Qty" />
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="">Ukuran</label>
-                                                                    <input class="form-control" type="text" value="<?= $pro->Ukuran ?>" name="Ukuran" placeholder="Ukuran" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="">Warna</label>
-                                                                    <input class="form-control" type="text" value="<?= $pro->warna ?>" name="warna" placeholder="warna" />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="">Nomer Pemesanan</label>
-                                                                    <input class="form-control" type="text" value="<?= $pro->nomerPemesanan ?>" name="nomerPemesanan" placeholder="Nomer Pemesanan" />
+                                                                    <input class="form-control" type="text" value="<?= $sto->ukuran ?>" name="Ukuran" placeholder="Ukuran" />
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -125,15 +114,15 @@
                         <div class="form-group">
                             <label for="">Nama Produk</label>
                             <input class="form-control" type="text" name="namaProduk" placeholder="Nama Produk" />
-                            <input type="hidden" name="id" value="<?= $pro->idProduk ?>" id="">
+                            <input type="hidden" name="id" value="<?= $sto->idStock ?>" id="">
                         </div>
                         <div class="form-group">
                             <label for="">Qty</label>
-                            <input class="form-control" type="text" name="Qty" placeholder="Qty" />
+                            <input class="form-control" type="text" name="qty" placeholder="Qty" />
                         </div>
                         <div class="form-group">
                             <label for="">Ukuran</label>
-                            <input class="form-control" type="text" name="Ukuran" placeholder="Ukuran" />
+                            <input class="form-control" type="text" name="ukuran" placeholder="Ukuran" />
                         </div>
                         <div class="form-group">
                             <label for="">Warna</label>

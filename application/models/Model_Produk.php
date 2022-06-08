@@ -77,9 +77,14 @@ class Model_Produk extends CI_Model
         $this->Ukuran = $post['Ukuran'];
         $this->warna = $post['warna'];
         $this->nomerPemesanan = $post['nomerPemesanan'];
-        $this->idProduk = $post['idProduk'];
+        $this->idProduk = $post['id'];
 
-        $this->db->update($this->_table, $this, )
+        $this->db->update($this->_table, $this, array('idProduk' => $post['id']) );
+    }
+
+    public function delete($id)
+    {
+        return $this->db->delete($this->_table, array("idProduk" => $id));
     }
 }
 ?>
