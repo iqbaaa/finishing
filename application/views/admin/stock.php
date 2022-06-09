@@ -37,6 +37,7 @@
                                             <th>Nama Produk</th>
                                             <th>Qty</th>
                                             <th>Ukuran</th>
+                                            <th>Letak Produk</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -50,9 +51,10 @@
                                                 <td><?= $sto->namaProduk ?></td>
                                                 <td><?= $sto->qty ?></td>
                                                 <td><?= $sto->ukuran ?></td>
+                                                <td><?= $sto->letakProduk ?></td>
                                                 <td>
                                                     <a type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit<?php echo $sto->idStock; ?>"><i class="fas fa-edit"></i></a>
-                                                    <a href="<?= site_url('Produk/delete/' . $sto->idStock) ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                                    <a href="<?= site_url('Stock/delete/' . $sto->idStock) ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                             <!-- Modal ubah -->
@@ -63,7 +65,7 @@
                                                             <h4 class="modal-title" id="myModalLabel">Form Ubah Produk</h4>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="<?= site_url('Produk/edit') ?>" method="POST" role="form" enctype="multipart/form-data">
+                                                            <form action="<?= site_url('Stock/edit') ?>" method="POST" role="form" enctype="multipart/form-data">
                                                                 <div class="form-group">
                                                                     <label for="">Nama Produk</label>
                                                                     <input class="form-control" type="text" value="<?= $sto->namaProduk ?>" name="namaProduk" placeholder="Nama Produk" />
@@ -71,11 +73,15 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="">Qty</label>
-                                                                    <input class="form-control" type="text" value="<?= $sto->qty ?>" name="Qty" placeholder="Qty" />
+                                                                    <input class="form-control" type="text" value="<?= $sto->qty ?>" name="qty" placeholder="Qty" />
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="">Ukuran</label>
-                                                                    <input class="form-control" type="text" value="<?= $sto->ukuran ?>" name="Ukuran" placeholder="Ukuran" />
+                                                                    <input class="form-control" type="text" value="<?= $sto->ukuran ?>" name="ukuran" placeholder="Ukuran" />
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="">Letak Produk</label>
+                                                                    <input class="form-control" type="text" value="<?= $sto->letakProduk ?>" name="letakProduk" placeholder="letak produk" />
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -110,7 +116,7 @@
                     <h4 class="modal-title" id="myModalLabel">Form Tambah Produk</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="<?= site_url('Produk/add') ?>" method="POST" role="form" enctype="multipart/form-data">
+                    <form action="<?= site_url('Stock/add') ?>" method="POST" role="form" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Nama Produk</label>
                             <input class="form-control" type="text" name="namaProduk" placeholder="Nama Produk" />
@@ -125,13 +131,10 @@
                             <input class="form-control" type="text" name="ukuran" placeholder="Ukuran" />
                         </div>
                         <div class="form-group">
-                            <label for="">Warna</label>
-                            <input class="form-control" type="text" name="warna" placeholder="warna" />
+                            <label for="">Letak Produk</label>
+                            <input class="form-control" type="text" name="letakProduk" placeholder="letak produk" />
                         </div>
-                        <div class="form-group">
-                            <label for="">Nomer Pemesanan</label>
-                            <input class="form-control" type="text" name="nomerPemesanan" placeholder="Nomer Pemesanan" />
-                        </div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="submit" name="simpan" class="btn btn-primary">Save changes</button>

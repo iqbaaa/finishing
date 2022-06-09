@@ -54,10 +54,9 @@ class Model_Stock extends CI_Model
     {
         $post = $this->input->post();
         $this->namaProduk = $post['namaProduk'];
-        $this->Qty = $post['qty'];
-        $this->Ukuran = $post['ukuran'];
-        $this->warna = $post['letakProduk'];
-
+        $this->qty = $post['qty'];
+        $this->ukuran = $post['ukuran'];
+        $this->letakProduk = $post['letakProduk'];
         $this->db->insert($this->_table, $this);
     }
 
@@ -65,9 +64,9 @@ class Model_Stock extends CI_Model
     {
         $post = $this->input->post();
         $this->namaProduk = $post['namaProduk'];
-        $this->Qty = $post['qty'];
-        $this->Ukuran = $post['ukuran'];
-        $this->warna = $post['letakProduk'];
+        $this->qty = $post['qty'];
+        $this->ukuran = $post['ukuran'];
+        $this->letakProduk = $post['letakProduk'];
         $this->idStock = $post['id'];
 
         $this->db->update($this->_table, $this, array('idStock' => $post['id']) );

@@ -88,6 +88,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item has-treeview">
+              <a href="<?= site_url('Pengiriman') ?>" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Data Pengiriman
+                </p>
+              </a>
+            </li>
 
             <a href="<?= site_url('Index/logout') ?>" class="nav-link">
               <i class="nav-icon fas fa-power-off"></i>
