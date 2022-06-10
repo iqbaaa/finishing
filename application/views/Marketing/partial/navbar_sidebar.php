@@ -64,7 +64,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview">
-              <a href="<?= site_url('Dashboard') ?>" class="nav-link active">
+              <a href="<?= site_url('Dashboardu') ?>" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -77,30 +77,6 @@
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Data Produk
-                </p>
-              </a>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="<?= site_url('Stock') ?>" class="nav-link">
-                <i class="nav-icon fas fa-book"></i>
-                <p>
-                  Data Stock
-                </p>
-              </a>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="<?= site_url('ProdukMasuk') ?>" class="nav-link">
-                <i class="nav-icon fas fa-book"></i>
-                <p>
-                  Data Produk Masuk
-                </p>
-              </a>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="<?= site_url('Pengiriman') ?>" class="nav-link">
-                <i class="nav-icon fas fa-book"></i>
-                <p>
-                  Data Pengiriman
                 </p>
               </a>
             </li>
